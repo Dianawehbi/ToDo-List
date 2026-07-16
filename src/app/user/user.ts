@@ -8,7 +8,7 @@ import {
   Output,
   signal,
 } from '@angular/core';
-import { User } from '../models/user.mode';
+import { User } from '../models/user.model';
 import { CardComponent } from '../shared/card/card';
 
 // type aliases
