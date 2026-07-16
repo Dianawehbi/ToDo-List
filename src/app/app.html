@@ -14,6 +14,32 @@
     />
   </head>
   <body>
-    <app-header/>
+    <app-header />
+    <main>
+      <ul id="users">
+        @for (user of users; track user.id) {
+          <li>
+            <app-user
+              (select)="onSelectUser($event)"
+              [user]="user"
+              [selected]="selectedUserId() == user.id"
+            />
+          </li>
+        }
+      </ul>
+
+      @if (selectedUserId()) {
+        <app-tasks
+          [name]="selectedUser?.name ?? ' '"
+          [userId]="selectedUserId()"
+          /* (isAddingTask)="onAddTaskForUser($event)" */
+        />
+      } @else {
+        <p id="fallback">Select a user to see their Task</p>
+      }
+
+      <h3>Task Ended with id : {{ selectedUserId() }}</h3>
+    </main>
+
   </body>
 </html>
