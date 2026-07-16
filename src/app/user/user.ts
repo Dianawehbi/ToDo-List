@@ -1,15 +1,11 @@
 import {
   Component,
   computed,
-  EventEmitter,
-  Input,
   input,
   output,
-  Output,
   signal,
 } from '@angular/core';
 import { User } from '../models/user.model';
-import { CardComponent } from '../shared/card/card';
 
 // type aliases
 // type User = {
@@ -20,7 +16,7 @@ import { CardComponent } from '../shared/card/card';
 
 @Component({
   selector: 'app-user',
-  imports: [CardComponent],
+  standalone:false,
   templateUrl: './user.html',
   styleUrl: './user.css',
 })
